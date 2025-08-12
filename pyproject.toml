@@ -1,0 +1,55 @@
+[project]
+name = "minerva"
+version = "0.1.0"
+description = "A memory-based coding assistant inspired by human memory mechanisms"
+readme = "README.md"
+authors = [
+    { name = "laofeizhu", email = "laofeizhu@users.noreply.github.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "click>=8.0.0",
+    "rich>=13.0.0",
+    "sqlalchemy>=2.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.scripts]
+minerva = "minerva.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+ai = [
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "sentence-transformers>=2.2.0",
+    "numpy>=1.24.0",
+]
+web = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "jinja2>=3.1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
