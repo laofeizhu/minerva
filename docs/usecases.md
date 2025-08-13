@@ -1,53 +1,51 @@
-# Minerva Agent 编程记忆系统使用案例
+# Minerva 通用记忆系统使用案例
 
-本文档描述了Minerva Agent在编程任务中的记忆系统使用场景，展示了如何通过记忆机制提升代码开发效率，学习用户编程风格，并从错误中吸取教训。
+本文档描述了Minerva通用记忆系统的使用场景，展示了如何通过**通用记忆机制**学习任何类型的经验，包括编程、学习、生活等各个领域。重点展示记忆关联、睡眠整理和智能应用的过程。
 
-## 案例1：代码库理解记忆 (Codebase Understanding Memory)
+## 案例1：基础记忆形成与关联 (Basic Memory Formation & Association)
 
 ### 场景描述
-Agent分析一个复杂的代码库，理解其架构和工作流程，并将这些知识持久化保存，避免重复分析。
+用户与Minerva分享各种经验，系统自动建立记忆片段并创建关联网络，展示通用记忆机制的基础功能。
 
 ### 对话示例
 
-**用户**: "请帮我分析这个Flask应用的架构"
+**用户**: "我今天学习了Python装饰器，发现它们很有用"
 
-**Agent**: "我来分析这个代码库的结构..."
+**Agent**: "很好！请告诉我更多细节，我会记住这次学习经历。"
+
+**用户**: "装饰器可以在不修改原函数的情况下添加功能，比如@property可以让方法像属性一样访问"
 
 **Agent内部处理**:
 ```python
-# 分析代码库后创建记忆片段
-codebase_memory = MemorySegment()
-codebase_memory.content = {
-    "type": "codebase_analysis",
-    "project_name": "flask_blog_app",
-    "framework": "Flask",
-    "architecture_pattern": "MVC",
-    "key_components": {
-        "models": ["User", "Post", "Comment"],
-        "views": ["auth", "main", "admin"],
-        "controllers": ["user_controller", "post_controller"],
-        "database": "SQLAlchemy with PostgreSQL",
-        "authentication": "Flask-Login + bcrypt"
+# 创建学习经历记忆片段
+learning_memory = MemorySegment(
+    content={
+        "event": "learning_experience",
+        "topic": "Python装饰器",
+        "key_insights": [
+            "不修改原函数添加功能",
+            "@property让方法像属性访问"
+        ],
+        "examples": ["@property"],
+        "understanding_level": "basic"
     },
-    "entry_point": "app.py",
-    "config_files": ["config.py", "requirements.txt"],
-    "key_workflows": {
-        "user_registration": "auth/register -> User.create() -> email_verification",
-        "post_creation": "main/create -> Post.create() -> content_validation",
-        "comment_system": "post/comment -> Comment.create() -> moderation_queue"
+    context={
+        "learning_method": "self_study",
+        "difficulty": "moderate",
+        "user_reaction": "positive"
     },
-    "dependencies": ["Flask", "SQLAlchemy", "Flask-Login", "bcrypt", "email-validator"]
-}
-codebase_memory.context = {
-    "project_path": "/Users/john/projects/flask_blog",
-    "analysis_date": "2024-08-12",
-    "code_quality": "well_structured",
-    "documentation_level": "moderate"
-}
-codebase_memory.importance_score = 0.9  # 高重要性，避免重复分析
+    importance_score=0.7
+)
+
+# 自动寻找相关记忆并建立关联
+association_builder.create_associations(learning_memory, existing_memories)
+# 可能关联到：
+# - 之前学习Python函数的记忆
+# - 遇到装饰器语法错误的记忆
+# - 阅读Python文档的记忆
 ```
 
-**Agent**: "这是一个结构良好的Flask博客应用，采用MVC架构模式。主要包含用户管理、文章发布和评论系统三个核心功能模块。我已经记住了这个架构，下次讨论相关功能时不需要重新分析代码库。"
+**Agent**: "我记住了你对Python装饰器的学习！这是一个很有用的概念。我注意到这与你之前学习的Python函数知识相关，也解释了你上周遇到的那个@property语法问题。"
 
 ---
 

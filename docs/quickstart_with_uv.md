@@ -1,4 +1,8 @@
-# Minerva Agent 快速开始指南 (使用uv)
+# Minerva 快速开始指南 (使用uv)
+
+> **当前状态**: Hello World实现
+>
+> 本指南帮助你设置Minerva开发环境。项目当前处于hello world阶段，为通用记忆系统奠定基础。
 
 ## 前置要求
 

@@ -1,8 +1,16 @@
-# Minerva Milestone 1 - Code Workflow & Architecture
+# Minerva Milestone 1 - Code Workflow & Architecture (Legacy)
 
-## Overview
+> **重要说明**: 这个文档包含了过度工程化的设计，已被更简单的通用记忆机制取代。
+>
+> **当前方法**: 参考 [design_v2.md](design_v2.md) 了解基于通用记忆机制的新架构。
+>
+> **项目状态**: 已重构为Hello World实现，准备基于新设计进行开发。
+
+## Overview (Legacy)
 
 This document describes the detailed code workflow and architecture for implementing Milestone 1: Basic Memory Storage. It provides a technical roadmap for completing the remaining tasks and achieving the first working demo.
+
+**Note**: The architecture described here was overly complex and domain-specific. The new approach focuses on universal memory mechanisms.
 
 ## Current Status
 

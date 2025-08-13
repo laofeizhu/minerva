@@ -1,7 +1,7 @@
-# Minerva Agent 执行计划与进度追踪
+# Minerva 执行计划与进度追踪
 
 ## 项目概述
-构建一个基于人类记忆机制的编程助手，能够学习代码库、从错误中学习、适应用户编程风格。
+构建一个基于人类记忆机制的AI助手，使用**通用记忆机制**而非领域特定的实现。重点是模拟人类记忆的基本原理：关联网络、重要性评分、睡眠整理等。
 
 ## 技术选择
 
@@ -31,10 +31,10 @@ minerva/
 
 ---
 
-## 🎯 Milestone 1: 基础记忆存储 (Week 1)
+## 🎯 Milestone 1: 通用记忆系统基础 (Week 1)
 
 ### 目标
-实现最基本的记忆片段存储和检索功能
+实现通用的记忆片段存储和基础关联功能，为所有类型的学习和记忆奠定基础
 
 ### 任务列表
 - [ ] **1.1 创建项目结构** (Day 1)
@@ -77,45 +77,50 @@ Your GitHub username is john_doe (stored 2 minutes ago)
 
 ---
 
-## 🧠 Milestone 2: 编程记忆特化 (Week 2)
+## 🔗 Milestone 2: 关联网络系统 (Week 2)
 
 ### 目标
-添加专门针对编程任务的记忆类型和处理逻辑
+实现记忆片段之间的关联机制，让系统能够建立记忆网络并发现相关经验
 
 ### 任务列表
-- [ ] **2.1 实现编程记忆类型** (Day 6-7)
-  - 创建`CodebaseMemory`类
-  - 创建`ErrorMemory`类
-  - 创建`CodingStyleMemory`类
-  - **验证**: 能创建不同类型的编程记忆
+- [ ] **2.1 实现关联构建器** (Day 6-7)
+  - 创建`AssociationBuilder`类
+  - 实现时间、语义、因果关联
+  - 添加关联强度计算
+  - **验证**: 能为新记忆自动建立关联
 
-- [ ] **2.2 简单代码分析器** (Day 7-8)
-  - 实现基础的Python代码结构分析
-  - 提取函数名、类名、导入等信息
-  - **验证**: 能分析一个简单的Python文件
+- [ ] **2.2 增强记忆检索** (Day 7-8)
+  - 实现基于关联的记忆检索
+  - 添加相关性评分算法
+  - 支持多跳关联查询
+  - **验证**: 能通过关联找到相关记忆
 
-- [ ] **2.3 错误捕获机制** (Day 8-9)
-  - 实现命令执行错误捕获
-  - 创建错误记忆片段
-  - **验证**: 能捕获并记住`pytest`未安装的错误
+- [ ] **2.3 记忆重要性评分** (Day 8-9)
+  - 实现动态重要性计算
+  - 基于访问频率和关联强度
+  - 添加时间衰减机制
+  - **验证**: 重要记忆排序靠前
 
-- [ ] **2.4 编程任务CLI** (Day 9-10)
-  - 添加`analyze-code`命令
-  - 添加`run-command`命令（带错误学习）
-  - **验证**: 能分析代码并从错误中学习
+- [ ] **2.4 关联可视化** (Day 9-10)
+  - 添加`show-associations`命令
+  - 显示记忆网络结构
+  - 展示关联强度和类型
+  - **验证**: 能可视化记忆关联网络
 
 ### 预期输出
 ```bash
-# 分析代码库
-$ uv run minerva analyze-code ./my_project
-✓ Analyzed Flask project with MVC architecture
-✓ Found 3 models, 5 views, 2 controllers
-✓ Memory stored as codebase_001
+# 添加记忆并查看关联
+$ uv run minerva add-memory "学习了Python装饰器的用法"
+✓ Memory stored: 学习了Python装饰器的用法
+🔗 Found 2 related memories, created associations
 
-# 运行命令并学习错误
-$ uv run minerva run-command "pytest tests/"
-✗ Error: pytest command not found
-✓ Learned error pattern, will try 'python -m pytest' next time
+# 查看记忆关联
+$ uv run minerva show-associations mem_001
+📊 Memory: "学习了Python装饰器的用法"
+🔗 Associations:
+  - mem_002 (semantic, strength: 0.8): "Python函数定义语法"
+  - mem_003 (temporal, strength: 0.6): "阅读Python文档"
+  - mem_004 (causal, strength: 0.9): "遇到装饰器语法错误"
 ```
 
 ---
