@@ -1,20 +1,12 @@
 """
-Minerva - A memory-based coding assistant inspired by human memory mechanisms
+Minerva - A memory-based assistant inspired by human memory mechanisms
 
-This package provides a coding assistant that learns from interactions,
-remembers codebase structures, learns from errors, and adapts to user coding styles.
+Hello World implementation - Basic memory storage and retrieval
 """
 
 __version__ = "0.1.0"
 __author__ = "laofeizhu"
 
-from .memory import MemorySegment, MemoryStore, MemoryType, memory_store
-from .cli import main
-
-__all__ = [
-    "MemorySegment",
-    "MemoryStore",
-    "MemoryType",
-    "memory_store",
-    "main"
-]
+def hello_world():
+    """Basic hello world function"""
+    return "Hello from Minerva! 🧠"

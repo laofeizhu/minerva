@@ -1,82 +1,58 @@
 # Minerva 🧠
 
-A memory-based coding assistant inspired by human memory mechanisms.
+A memory-based assistant inspired by human memory mechanisms.
 
-## Overview
+## Current Status: Hello World Implementation
 
-Minerva is an AI coding assistant that learns from every interaction, remembers codebase structures, learns from errors, and adapts to your coding style. Unlike traditional AI assistants that start fresh each time, Minerva builds a persistent memory system that gets smarter with use.
+This repository contains the foundational structure for Minerva, currently implemented as a hello world to establish the basic project framework.
 
-## Key Features
+## What is Minerva?
 
-- 🧠 **Memory-Based Learning**: Builds persistent memory from every interaction
-- 📚 **Codebase Understanding**: Analyzes and remembers project architectures
-- 🐛 **Error Learning**: Learns from mistakes to avoid repeating them
-- 🎨 **Style Adaptation**: Learns and applies your coding preferences
-- 🔍 **Intelligent Retrieval**: Finds relevant memories using associative search
+Minerva aims to be an AI assistant that learns and remembers like humans do - through associative memory networks, consolidation processes, and intelligent retrieval. Unlike traditional AI that starts fresh each time, Minerva will build persistent, interconnected memories that get smarter with use.
 
-## Quick Start
-
-### Installation
+## Hello World Usage
 
 ```bash
-# Clone the repository
-git clone https://github.com/laofeizhu/minerva.git
-cd minerva
-
-# Install with uv (recommended)
+# Install dependencies
 uv sync
 
-# Or install with pip
-pip install -e .
+# Say hello
+uv run minerva hello
+
+# Show system info
+uv run minerva info
 ```
 
-### Basic Usage
+## Vision
 
-```bash
-# Add a memory
-uv run minerva add-memory "My GitHub username is john_doe"
+The goal is to create a memory system that:
+- 🧠 **Learns from every interaction** through universal memory mechanisms
+- 🔗 **Builds associative networks** connecting related experiences
+- 🌙 **Consolidates memories** during "sleep" cycles to extract patterns
+- 🎯 **Applies learned patterns** to new situations intelligently
 
-# Ask a question
-uv run minerva ask "What is my GitHub username?"
+## Next Steps
 
-# Analyze a codebase
-uv run minerva analyze-code ./my_project
+The design documents are being refined to focus on:
+1. **Universal memory mechanisms** (not domain-specific)
+2. **Associative networks** for natural memory connections
+3. **Consolidation processes** for pattern extraction and learning
+4. **Intelligent retrieval** based on context and associations
 
-# View memory statistics
-uv run minerva stats
-```
+## Documentation (In Progress)
 
-## Development Status
-
-This project is in early development. Current milestone: **Milestone 1 - Basic Memory Storage**
-
-- [x] Project structure and CLI framework
-- [x] Basic memory segment implementation
-- [x] In-memory storage system
-- [ ] Complete CLI functionality
-- [ ] First working demo
-
-See [docs/execution.md](docs/execution.md) for detailed development roadmap.
-
-## Architecture
-
-Minerva is inspired by human memory mechanisms:
-
-- **Memory Segments**: Multi-dimensional information storage (like human memory episodes)
-- **Associative Networks**: Memories connected by time, space, semantics, and emotions
-- **Importance Scoring**: Automatic prioritization of valuable information
-- **Memory Consolidation**: Sleep-like processes for organizing and optimizing memories
-
-## Documentation
-
-- [Design Overview](docs/computer_memory.md) - Detailed system architecture
+- [Design Overview](docs/computer_memory.md) - Core memory system architecture
 - [Use Cases](docs/usecases.md) - Example scenarios and workflows
-- [Execution Plan](docs/execution.md) - Development milestones and progress
-- [Quick Start with uv](docs/quickstart_with_uv.md) - Setup and development guide
+- [Execution Plan](docs/execution.md) - Development roadmap
+- [Workflow Guide](docs/workflow.md) - Implementation details
 
 ## Contributing
 
-This project follows the principle of simplicity and step-by-step development. Each milestone introduces clear, verifiable improvements.
+This project emphasizes:
+- **Simplicity first** - Start with hello world, build incrementally
+- **Universal mechanisms** - Avoid over-specialization
+- **Human-inspired design** - Learn from neuroscience and psychology
+- **Step-by-step development** - Each milestone adds clear value
 
 ## License
 
